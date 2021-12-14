@@ -1,6 +1,6 @@
-h2 {
+/* h2 {
   font-size: medium;
- }
+ } */
  
  .container {
    display: flex;
@@ -23,6 +23,7 @@ h2 {
    color: aliceblue;
    font-family: bungee;
    border-radius: .2em;
+   font-size: small;
  }
  
  .belowForm {
@@ -37,3 +38,13 @@ h2 {
    width: 90%;
    
  }
+
+ .counter {
+   font-family: bungee;
+   font-size: small;
+ }
+
+ .btn:hover {
+  color: #4056A1;
+  background-color: aliceblue;
+}

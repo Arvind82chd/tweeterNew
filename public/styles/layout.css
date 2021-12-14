@@ -21,7 +21,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif, 'Bungee', cursive, sans-serif;
 }
 
-header {
+.header1 {
   display: flex;
   height: 520px;
   flex-direction: column;
@@ -29,9 +29,11 @@ header {
   justify-content: flex-end;
   background-color: salmon;
   width: 100%;
-  
+  background-color: #e7a427;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+/* 
   background-color: #3c67d4bd;
-  background-image: url("https://www.transparenttextures.com/patterns/binding-light.png");
+  background-image: url("https://www.transparenttextures.com/patterns/binding-light.png"); */
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
@@ -40,3 +42,61 @@ header {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 0% 5% 0%;
+  /* width: 90%;  */
+  align-items: center;
+  margin-top: 0px; 
+}
+
+
+.old-tweets {
+  display: flex;
+  flex-direction: column;
+  width: 90%; 
+  margin-top: 3px;
+  /* margin: 5% 0% 5% 0%; */
+  /* align-items: center; */
+  justify-content: stretch;
+  border: 2px black solid;
+}
+
+.topLine {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 3%;
+}
+
+.topLineLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  justify-content: space-around;
+}
+
+.tweetsOutput {
+  border-bottom: 2px black solid;
+  justify-content: stretch;
+  width: 98%;
+  margin: 1% 1% 0% 1%;
+}
+ 
+.belowTweet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1% 1% 1% 1%;
+  font-size: small;
+}
+
+.icons.fas {
+  color: #4056A1;
+}
+
+.fas:hover {
+  color: #e7a427;
+}

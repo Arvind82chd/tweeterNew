@@ -6,7 +6,7 @@
   background-color: #4056A1;
   flex-direction: row;
   justify-content: space-between;
-  border-radius: .5em;
+  border-radius: .3em;
   position: fixed;
 
 }
@@ -38,5 +38,4 @@
   display: flex;
   justify-content: center;
   color: red;
-  
 }
