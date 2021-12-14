@@ -1,0 +1,42 @@
+.nav {
+  display: flex;
+  height: 120px;
+  width: 100%;
+  color: #FFFFFF;
+  background-color: #4056A1;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: .5em;
+  position: fixed;
+
+}
+
+.title {
+  font-family: Bungee;
+  margin-left: 1.5em;
+  margin-top: 2em;
+  font-size: xx-large;
+}
+
+.topLeft {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Source Sans Pro';
+  justify-content: center;
+  margin-right: 1.5em;
+}
+
+.topLeftContent {
+  font-size: medium;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.doubleAngle {
+  display: flex;
+  justify-content: center;
+  color: red;
+  
+}

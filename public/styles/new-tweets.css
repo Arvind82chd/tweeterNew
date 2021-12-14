@@ -1,0 +1,39 @@
+h2 {
+  font-size: medium;
+ }
+ 
+ .container {
+   display: flex;
+   flex-direction: column;
+   margin: 5% 0% 5% 0%;
+   /* width: 90%; */
+   align-items: center;
+   margin-top: 0px;
+  
+ }
+ 
+ 
+ textarea {
+   width: 100%;
+   border-bottom: 2px solid black;
+ }
+ 
+ .btn {
+   background-color: #4056A1;
+   color: aliceblue;
+   font-family: bungee;
+   border-radius: .2em;
+ }
+ 
+ .belowForm {
+   display: flex;
+   justify-content: space-between;
+ }
+ 
+ .new-tweet {
+   display: flex;
+   flex-direction: column;
+   margin: 0;
+   width: 90%;
+   
+ }

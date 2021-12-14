@@ -18,8 +18,25 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif, 'Bungee', cursive, sans-serif;
 }
+
+header {
+  display: flex;
+  height: 520px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: salmon;
+  width: 100%;
+  
+  background-color: #3c67d4bd;
+  background-image: url("https://www.transparenttextures.com/patterns/binding-light.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
