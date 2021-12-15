@@ -7,7 +7,7 @@
 //Tweet database:
 
 const tweetDataBase =
-  {
+ [ {
     "user": {
       "name": "Newton",
       "avatars": "https://i.imgur.com/73hZDYK.png",
@@ -17,34 +17,54 @@ const tweetDataBase =
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
     "created_at": 1639342241661
+  }];
+
+  // const $tweet = createTweetElement(tweetDataBase);
+
+  // console.log($tweet);
+  // $('#tweets-container').append($tweet);
+
+  
+  const createTweetElement = function(data) {
+    
+    const element = `<article>
+    <section class="old-tweets">
+    <header class="topLine">
+    <div class="topLineLeft">
+    <img alt="avtar" src=${data.user.avatars}>
+    <h3>${data.user.name}</h3>
+    </div>
+    
+    <h3>${data.user.handle}</h3>
+    </header>
+    <p class="tweetsOutput" name="tweets">${data.content.text}</p>
+    <footer class="belowTweet">
+    <output class="timestamp">${timeago.format(data.created_at)}</output>
+    <div class="icons">
+    <i class="fas fa-flag"></i>
+    <i class="fas fa-retweet"></i>
+    <i class="fas fa-heart"></i>
+    </div>
+    </footer>
+    </section>
+    
+    </article>`;
+    
+    //return document.body.innerHTML = element;//verfify this
+    return $(element);
   };
-
-const createTweetElement = function() {
-
-  const tweet = `<article>
- <section class="old-tweets">
-        <header class="topLine">
-          <div class="topLineLeft">
-            <img alt="avtar" src=${tweetDataBase.user.avatars}>
-            <h3>${tweetDataBase.user.name}</h3>
-          </div>
-          
-          <h3>${tweetDataBase.user.handle}</h3>
-        </header>
-        <p class="tweetsOutput" name="tweets">${tweetDataBase.content.text}</p>
-        <footer class="belowTweet">
-          <output class="timestamp">${tweetDataBase.created_at}</output>
-          <div class="icons">
-            <i class="fas fa-flag"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </footer>
-      </section>
-
-  </article>`;
-
-  return tweet;
-}
-
-console.log(createTweetElement(tweetDataBase));
+  
+  //console.log(createTweetElement(data));
+  
+  const renderTweets = function(data) {
+    const tweetContainer = $("#allTweets")//to send the element to html
+    for (let tweet of data) {
+      const element = createTweetElement(tweet);
+      console.log(element);
+      tweetContainer.append(element)
+    }
+  }
+  
+  
+  
+renderTweets(tweetDataBase);
