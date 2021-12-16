@@ -59,27 +59,40 @@ const tweetDataBase =
     }
   }
 
-  
+  const loadTweets = function() {
+   $.get("/tweets", function (data, status) {
+     renderTweets(data);
+   })
+  };
+
+ 
   
   $(document).ready(function () {
-    $.get('/tweets', (data, status) => {
-      renderTweets(data);
+    // $.get('/tweets', (data, status) => {
+    //   renderTweets(data);
+    // })
+    $(".tweetForm").submit(function(event) {
+      event.preventDefault();
+      $.ajax({
+      url: 'http://localhost:3000/tweets', 
+      method: 'GET',
     })
-    $(function() {
-      const $button = $('.btn');
-      $button.on('click', function () {
-        console.log('Button clicked, performing ajax call...');
-        $.ajax('initial-tweets.json', { method: 'GET' })
-        .then(function (initalTweetsJson) {
-          console.log('Success: ', initalTweetsJson);
-          $button.replaceWith(initalTweetsJson);
-         
+    .done(function() {
+      alert("got it")
+      loadTweets();
+    })
+    // .fail(function() {
+    //   allert('error');
+    // })
+    // .always(function() {
+    //   console.log('complete')
+    // })
         });
       });
-    });
+  //   });
 
    
-  });
+  // });
   
   
   
