@@ -16,9 +16,9 @@ const escape = function (str) { //to check the cross scripting or improve safety
       <header class="topLine">
         <div class="topLineLeft">
         <img alt="avtar" src=${data.user.avatars}>
-        <h3>${data.user.name}</h3>
+        <h5>${data.user.name}</h5>
         </div>
-        <h3>${data.user.handle}</h3>
+        <h4>${data.user.handle}</h4>
       </header>
       <p class="tweetsOutput" name="tweets">${escape(data.content.text)}</p> 
       <footer class="belowTweet">
@@ -51,6 +51,11 @@ const escape = function (str) { //to check the cross scripting or improve safety
    })
   };
 
+  function unhideError() {
+    window.caststatus.textContent = `You have extended your alphabet limit of 140: ${counter}`;
+    limitExceedError.hidden = false;
+    //.hidden = true;
+}
 
 
   $(document).ready(function () {
@@ -63,7 +68,8 @@ const escape = function (str) { //to check the cross scripting or improve safety
       event.preventDefault();//to cancel the submit action initially until it is submitted manually.
       const tweetText = $("#tweet-text");//picks up values from texarea
       if (tweetText.val().length > 140) { //checks if value is greater than 140
-        alert("You have extended your alphabet limit of 140");
+        //alert("You have extended your alphabet limit of 140");
+        unhideError();
         return;
       }
       $.post("/tweets", { text: tweetText.val() }, function (data) { //assigns the value captured from texarea to text in database.
@@ -72,6 +78,8 @@ const escape = function (str) { //to check the cross scripting or improve safety
       })
     })
   });
+
+ 
   
   
   

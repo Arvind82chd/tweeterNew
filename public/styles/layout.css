@@ -29,11 +29,11 @@ body {
   justify-content: flex-end;
   background-color: salmon;
   width: 100%;
-  background-color: #e7a427;
-    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-/* 
+  /* background-color: #e7a427;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"); */
+
   background-color: #3c67d4bd;
-  background-image: url("https://www.transparenttextures.com/patterns/binding-light.png"); */
+  background-image: url("https://www.transparenttextures.com/patterns/binding-light.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
@@ -103,5 +103,10 @@ allTweets {
 }
 
 .fas:hover {
-  color: #e7a427;
+  /* color: #e7a427; */
+  color: #3c67d4bd;
+}
+
+.limitExceedError {
+  border: 2px solid red;
 }
