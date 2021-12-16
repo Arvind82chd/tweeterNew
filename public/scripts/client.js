@@ -40,7 +40,8 @@
   
   const renderTweets = function(data) {
     const tweetContainer = $("#allTweets")//to send the element to html
-    for (let tweet of data) {
+    const reverseData = data.reverse();
+    for (let tweet of reverseData) {
       const element = createTweetElement(tweet);
       console.log(element);
       tweetContainer.append(element)
@@ -68,40 +69,11 @@
         return;
       }
       $.post("/tweets", { text: tweetText.val() }, function (data) { //assigns the value captured from texarea to text in database.
-      
-        $.get("/tweets", function (data, status) {
-          renderTweets(data);
-        })
+        tweetText.val('');
+       loadTweets();
       })
     })
   });
-  
-  // $(document).ready(function () {
-  //   // $.get('/tweets', (data, status) => {
-  //   //   renderTweets(data);
-  //   // })
-  //   $(".tweetForm").submit(function(event) {
-  //     event.preventDefault();
-  //     $.ajax({
-  //     url: 'http://localhost:3000/tweets', 
-  //     method: 'GET',
-  //   })
-  //   .then(function(data) {
-  //     alert("got it")
-  //     loadTweets(data);
-  //   })
-  //   // .fail(function() {
-  //   //   allert('error');
-  //   // })
-  //   // .always(function() {
-  //   //   console.log('complete')
-  //   // })
-  //       });
-  //     });
-  // //   });
-
-   
-  // // });
   
   
   
