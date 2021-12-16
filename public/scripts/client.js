@@ -53,34 +53,55 @@
    })
   };
 
- 
-  
+
+
   $(document).ready(function () {
-    // $.get('/tweets', (data, status) => {
-    //   renderTweets(data);
-    // })
-    $(".tweetForm").submit(function(event) {
-      event.preventDefault();
-      $.ajax({
+    $.ajax({
       url: 'http://localhost:3000/tweets', 
       method: 'GET',
     })
-    .then(function(data) {
-      alert("got it")
-      loadTweets(data);
+    $(".tweetForm").submit(function(event) {
+      event.preventDefault();//to cancel the submit action initially until it is submitted manually.
+      const tweetText = $("#tweet-text");//picks up values from texarea
+      if (tweetText.val().length > 140) { //checks if value is greater than 140
+        alert("You have extended your alphabet limit of 140");
+        return;
+      }
+      $.post("/tweets", { text: tweetText.val() }, function (data) { //assigns the value captured from texarea to text in database.
+      
+        $.get("/tweets", function (data, status) {
+          renderTweets(data);
+        })
+      })
     })
-    // .fail(function() {
-    //   allert('error');
-    // })
-    // .always(function() {
-    //   console.log('complete')
-    // })
-        });
-      });
-  //   });
+  });
+  
+  // $(document).ready(function () {
+  //   // $.get('/tweets', (data, status) => {
+  //   //   renderTweets(data);
+  //   // })
+  //   $(".tweetForm").submit(function(event) {
+  //     event.preventDefault();
+  //     $.ajax({
+  //     url: 'http://localhost:3000/tweets', 
+  //     method: 'GET',
+  //   })
+  //   .then(function(data) {
+  //     alert("got it")
+  //     loadTweets(data);
+  //   })
+  //   // .fail(function() {
+  //   //   allert('error');
+  //   // })
+  //   // .always(function() {
+  //   //   console.log('complete')
+  //   // })
+  //       });
+  //     });
+  // //   });
 
    
-  // });
+  // // });
   
   
   
