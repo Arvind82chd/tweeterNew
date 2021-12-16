@@ -46,37 +46,50 @@ const escape = function (str) { //to check the cross scripting or improve safety
   }
 
   const loadTweets = function(data) {//to load the tweets
-   $.get("/tweets", function (data, status) {
+   $.get("/tweets", function (data, status) { //uses jquery get to connect with the data on tweets page.
      renderTweets(data);
    })
   };
 
   function unhideError() {
-    window.caststatus.textContent = `You have extended your alphabet limit of 140: ${counter}`;
-    limitExceedError.hidden = false;
-    //.hidden = true;
+    $("limitExceedError").show();
+    return
 }
 
+const errorHandler = $(document).ready(function(){
+  $(".limitExceedError").show();
+})
 
   $(document).ready(function () {
     loadTweets();//So that all tweets apear before new tweet entry
-    $.ajax({ //for connecting with the database
-      url: 'http://localhost:3000/tweets', 
-      method: 'GET',
-    })
-    $(".tweetForm").submit(function(event) {
-      event.preventDefault();//to cancel the submit action initially until it is submitted manually.
-      const tweetText = $("#tweet-text");//picks up values from texarea
-      if (tweetText.val().length > 140) { //checks if value is greater than 140
+    // if (!actionAfterClick()) {
+      
+      //   return
+      // } actionAfterClick();
+      
+      // $.ajax({ //for connecting with the database using ajax
+      //   url: 'http://localhost:3000/tweets', 
+      //   method: 'GET',
+      // })
+      $(".limitExceedError").hide()
+      
+      $(".tweetForm").submit(function(event) {
+        event.preventDefault();//to cancel the submit action initially until it is submitted manually.
+        const tweetText = $("#tweet-text");//picks up values from texarea
+        if (tweetText.val().length > 140) { //checks if value is greater than 140
         //alert("You have extended your alphabet limit of 140");
-        unhideError();
+
+        $(".limitExceedError").text("You have exceeded your word limit!!!").show();
+        //errorHandler();
+       // $("limitExceedError").show();
         return;
       }
       $.post("/tweets", { text: tweetText.val() }, function (data) { //assigns the value captured from texarea to text in database.
         tweetText.val(''); //to clear the textarea
-       loadTweets();//to lead the new tweet.
+        loadTweets();//to lead the new tweet.
       })
     })
+
   });
 
  
