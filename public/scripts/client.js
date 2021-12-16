@@ -4,14 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//Tweet database:
-
-
-  // const $tweet = createTweetElement(tweetDataBase);
-
-  // console.log($tweet);
-  // $('#tweets-container').append($tweet);
-
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
   
   const createTweetElement = function(data) {
     
@@ -23,7 +20,7 @@
         </div>
         <h3>${data.user.handle}</h3>
       </header>
-      <p class="tweetsOutput" name="tweets">${data.content.text}</p>
+      <p class="tweetsOutput" name="tweets">${escape(data.content.text)}</p>
       <footer class="belowTweet">
         <output class="timestamp">${timeago.format(data.created_at)}</output>
           <div class="icons">
