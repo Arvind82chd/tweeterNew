@@ -51,44 +51,36 @@ const escape = function (str) { //to check the cross scripting or improve safety
    })
   };
 
-  function unhideError() {
-    $("limitExceedError").show();
-    return
-}
 
-const errorHandler = $(document).ready(function(){
-  $(".limitExceedError").show();
-})
+  const onClick = function () {
+    $(".tweetForm").submit(function(event) {
+      event.preventDefault();//to cancel the submit action initially until it is submitted manually.
+      const tweetText = $("#tweet-text");//picks up values from texarea
+    //   if (tweetText.val().length > 140) { //checks if value is greater than 140
+    //   //alert("You have extended your alphabet limit of 140");
+
+    //   // $(".limitExceedError").text("You have extended your alphabet limit of 140!!!").show();
+    //   //errorHandler();
+    //  // $("limitExceedError").show();
+    //   return;
+    // }
+    $.post("/tweets", { text: tweetText.val() }, function (data) { //assigns the value captured from texarea to text in database.
+      tweetText.val(''); //to clear the textarea
+      loadTweets();//to load the tweets.
+    })
+  })
+  }
 
   $(document).ready(function () {
+    
+    // $.ajax({ //for connecting with the database using ajax
+    //   url: 'http://localhost:3000/tweets', 
+    //   method: 'GET',
+    // })
     loadTweets();//So that all tweets apear before new tweet entry
-    // if (!actionAfterClick()) {
+   $(".limitExceedError").hide() //to hide the error until condition met
+    onClick();
       
-      //   return
-      // } actionAfterClick();
-      
-      // $.ajax({ //for connecting with the database using ajax
-      //   url: 'http://localhost:3000/tweets', 
-      //   method: 'GET',
-      // })
-      $(".limitExceedError").hide()
-      
-      $(".tweetForm").submit(function(event) {
-        event.preventDefault();//to cancel the submit action initially until it is submitted manually.
-        const tweetText = $("#tweet-text");//picks up values from texarea
-        if (tweetText.val().length > 140) { //checks if value is greater than 140
-        //alert("You have extended your alphabet limit of 140");
-
-        $(".limitExceedError").text("You have exceeded your word limit!!!").show();
-        //errorHandler();
-       // $("limitExceedError").show();
-        return;
-      }
-      $.post("/tweets", { text: tweetText.val() }, function (data) { //assigns the value captured from texarea to text in database.
-        tweetText.val(''); //to clear the textarea
-        loadTweets();//to lead the new tweet.
-      })
-    })
 
   });
 
