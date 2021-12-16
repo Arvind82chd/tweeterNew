@@ -45,7 +45,6 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <form class="tweetForm" method="post" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text" rows="1"></textarea>
@@ -55,7 +54,8 @@
           </div>
         </form>
       </section>
-      <article id="allTweets"></article>
+      <article id="allTweets">
+      </article>
     </main>
   </body>
 </html>

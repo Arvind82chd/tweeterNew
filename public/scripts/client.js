@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const escape = function (str) {
+const escape = function (str) { //to check the cross scripting or improve safety in taking inputs from user.
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -20,7 +20,7 @@ const escape = function (str) {
         </div>
         <h3>${data.user.handle}</h3>
       </header>
-      <p class="tweetsOutput" name="tweets">${escape(data.content.text)}</p>
+      <p class="tweetsOutput" name="tweets">${escape(data.content.text)}</p> 
       <footer class="belowTweet">
         <output class="timestamp">${timeago.format(data.created_at)}</output>
           <div class="icons">
@@ -37,15 +37,15 @@ const escape = function (str) {
   
   const renderTweets = function(data) {
     const tweetContainer = $("#allTweets")//to send the element to html
-    const reverseData = data.reverse();
+    const reverseData = data.reverse();//to reverse the direction of tweet sequence
     for (let tweet of reverseData) {
       const element = createTweetElement(tweet);
       console.log(element);
-      tweetContainer.append(element)
+      tweetContainer.append(element)//to send the tweet text to the required place.
     }
   }
 
-  const loadTweets = function(data) {
+  const loadTweets = function(data) {//to load the tweets
    $.get("/tweets", function (data, status) {
      renderTweets(data);
    })
@@ -54,7 +54,8 @@ const escape = function (str) {
 
 
   $(document).ready(function () {
-    $.ajax({
+    loadTweets();//So that all tweets apear before new tweet entry
+    $.ajax({ //for connecting with the database
       url: 'http://localhost:3000/tweets', 
       method: 'GET',
     })
@@ -66,8 +67,8 @@ const escape = function (str) {
         return;
       }
       $.post("/tweets", { text: tweetText.val() }, function (data) { //assigns the value captured from texarea to text in database.
-        tweetText.val('');
-       loadTweets();
+        tweetText.val(''); //to clear the textarea
+       loadTweets();//to lead the new tweet.
       })
     })
   });
