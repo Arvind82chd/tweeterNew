@@ -6,18 +6,6 @@
 
 //Tweet database:
 
-const tweetDataBase =
- [ {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1639342241661
-  }];
 
   // const $tweet = createTweetElement(tweetDataBase);
 
@@ -59,7 +47,7 @@ const tweetDataBase =
     }
   }
 
-  const loadTweets = function() {
+  const loadTweets = function(data) {
    $.get("/tweets", function (data, status) {
      renderTweets(data);
    })
@@ -77,9 +65,9 @@ const tweetDataBase =
       url: 'http://localhost:3000/tweets', 
       method: 'GET',
     })
-    .done(function() {
+    .then(function(data) {
       alert("got it")
-      loadTweets();
+      loadTweets(data);
     })
     // .fail(function() {
     //   allert('error');
