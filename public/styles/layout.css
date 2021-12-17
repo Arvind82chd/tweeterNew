@@ -104,6 +104,11 @@ body {
   padding-top: 1%;
 }
 
+.fas {
+  margin-left: .5em;
+}
+
+/* for icon color */
 #icons.fas {
   color: #4056A1;
 }
@@ -114,13 +119,29 @@ body {
 }
 
 .limitExceedError {
-  border: 2px solid red;
-  color: red;
+  border: 2px solid salmon;
+  color: salmon;
+  border-radius: .2em;
+  text-align: center;
 }
 
 .emptyTextError {
-  border: 2px solid red;
-  color: red;
+  border: 2px solid salmon;
+  color: salmon;
+  border-radius: .2em;
+  text-align: center;
+}
+
+h4 {
+  color: #4056A1;
+}
+
+h5 {
+  color: #4056A1;
+}
+
+#count {
+  color: #545149;
 }
 
 /* for smartphones */
@@ -138,6 +159,12 @@ body {
 }
 /* for tablet */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .nav {
+    background-color: #0d2678;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+    
+  }
 
   body {
     display: flex;
@@ -160,12 +187,21 @@ body {
   .container {
     padding-top: 200px;
   }
+
+  h4 {
+    color: #545149;;
+  }
+  
+  h5 {
+    color: #545149;;
+  }
   
   
 }
 
 /* for desktop */
 @media only screen and (min-width: 1024px) {
+
 
   body {
     display: flex;
@@ -188,6 +224,10 @@ body {
 
   .container {
     padding-top: 200px;
+  }
+
+  h2 {
+    color: #4056A1;
   }
   
 }

@@ -46,7 +46,7 @@ const escape = function (str) { //to check the cross scripting or improve safety
   }
 
   const loadTweets = function() {//to load the tweets
-   $.get("/tweets", function (data, status) { //uses jquery get to connect with the data on tweets page.
+   $.get("/tweets", function (data) { //uses ajax-jquery get method to connect with the data on tweets page.
      renderTweets(data);
    })
   };
@@ -73,6 +73,7 @@ const escape = function (str) { //to check the cross scripting or improve safety
   $.post("/tweets", { text: tweetText.val() }, function () { //assigns the value captured from texarea to text in database.
     tweetText.val(''); //to clear the textarea
     $("#allTweets").empty(); // empty's data and refreshes it with new one in next step
+    $('#count').val("140"); // resets the counter to 140 
     loadTweets();//to load the tweets.
     
   })

@@ -6,7 +6,7 @@ $(document).ready(function () {
     let count = event.target.value.length;// responsible for giving the length of key presses.
     const counter = $('#count');//picks up the count display on html and connects to this variable
     if (count >= 140) { // checks if more than given limit of characters clicked or not.
-        $('#count').css("color","red")
+        $('#count').css("color","salmon")
         $(".limitExceedError").text("You have extended your alphabet limit of 140!!!").show();
     } else {
         $('#count').css("color","black")
