@@ -16,27 +16,22 @@ html {
 
 body {
   color: #545149;
-  /* background-color: #f4f1ec; */
-  /* background-color: aliceblue; */
   background-color: #e6f1f7;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif, 'Bungee', cursive, sans-serif;
 }
 
+
+/* css for header class */
 .header1 {
   display: flex;
   height: 520px;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  /* background-color: salmon; */
   width: 100%;
-  /* background-color: #e7a427;
-    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"); */
-
   background-color: #3c67d4bd;
   background-image: url("https://www.transparenttextures.com/patterns/binding-light.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 
@@ -44,31 +39,34 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ 
+/* css for div under main */
 .container {
   display: flex;
   flex-direction: column;
-  /* margin: 5% 0% 5% 0%; */
-  /* width: 90%;  */
   align-items: center;
   margin-top: 5%; 
 }
 
+
+/* css for div id containing all old tweets */
 #allTweets {
-  /* margin: 5% 0% 5% 0%; */
   width: 90%;
 }
 
+
+/* css for div containing all layout content of old tweets */
 .old-tweets {
   display: flex;
   flex-direction: column;
   margin-top: 5%;
-  /* margin: 5% 0% 5% 0%; */
-  /* align-items: center; */
   justify-content: stretch;
   border: 2px black solid;
   border-radius: .2em;
 }
 
+
+/* css for div containing avtar, username and user handle */
 .topLine {
   display: flex;
   flex-direction: row;
@@ -76,14 +74,17 @@ body {
   margin: 3%;
 }
 
+
+/* css for div containing avtar and username */
 .topLineLeft {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-
   justify-content: space-around;
 }
 
+
+/* css for line displaying the tweets text content */
 .tweetsOutput {
   border-bottom: 2px black solid;
   justify-content: stretch;
@@ -91,6 +92,8 @@ body {
   margin: 1% 1% 0% 1%;
 }
  
+
+/* css for line below displayed tweet */
 .belowTweet {
   display: flex;
   flex-direction: row;
@@ -104,32 +107,22 @@ body {
   padding-top: 1%;
 }
 
+
+/* for all icons */
 .fas {
   margin-left: .5em;
 }
+
 
 /* for icon color */
 #icons.fas {
   color: #4056A1;
 }
 
+
+/* color for small elements */
 .fas:hover {
-  /* color: #e7a427; */
   color: #3c67d4bd;
-}
-
-.limitExceedError {
-  border: 2px solid salmon;
-  color: salmon;
-  border-radius: .2em;
-  text-align: center;
-}
-
-.emptyTextError {
-  border: 2px solid salmon;
-  color: salmon;
-  border-radius: .2em;
-  text-align: center;
 }
 
 h4 {
@@ -144,12 +137,28 @@ h5 {
   color: #545149;
 }
 
-/* for smartphones */
+
+/* Error messages css */
+.limitExceedError {
+  border: 2px solid salmon;
+  color: salmon;
+  border-radius: .2em;
+  text-align: center;
+}
+
+.emptyTextError {
+  border: 2px solid salmon;
+  color: salmon;
+  border-radius: .2em;
+  text-align: center;
+}
+
+
+/* Responsive feature for smartphones */
 @media only screen and (max-width: 767px) {
   .nav {
     background-color: transparent;
     background-image: url("https://www.transparenttextures.com/patterns/binding-light.png");
-    
   }
   
   .container {
@@ -157,13 +166,14 @@ h5 {
   }
 
 }
-/* for tablet */
+
+
+/* Responsive feature for tablet */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
 
   .nav {
     background-color: #0d2678;
     background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-    
   }
 
   body {
@@ -178,10 +188,10 @@ h5 {
     align-items: center;
     margin: 200px 2% 0px 4%;
     border-radius: .2em;
-  }  
+  } 
+
   main {
     width: 67%;
-
   }
 
   .container {
@@ -196,10 +206,10 @@ h5 {
     color: #545149;;
   }
   
-  
 }
 
-/* for desktop */
+
+/* Responsive feature for desktop */
 @media only screen and (min-width: 1024px) {
 
 
@@ -214,12 +224,11 @@ h5 {
     height: 400px;
     align-items: center;
     margin: 200px 2% 0px 4%;
-    /* margin-left: 15px; */
     border-radius: .2em;
   }  
+
   main {
     width: 67%;
-    
   }
 
   .container {

@@ -33,7 +33,6 @@ const escape = function (str) { //to check the cross scripting or improve safety
     return element;
   };
   
-  //console.log(createTweetElement(data));
   
   const renderTweets = function(data) {
     const tweetContainer = $("#allTweets")//to send the element to html
@@ -45,7 +44,7 @@ const escape = function (str) { //to check the cross scripting or improve safety
     }
   }
 
-  const loadTweets = function() {//to load the tweets
+  const loadTweets = function() { //picked it from my previous code
    $.get("/tweets", function (data) { //uses ajax-jquery get method to connect with the data on tweets page.
      renderTweets(data);
    })
@@ -62,27 +61,17 @@ const escape = function (str) { //to check the cross scripting or improve safety
 
    $(".tweetForm").submit(function(event) {
     event.preventDefault();//to cancel the submit action initially until it is submitted manually.
-    const tweetText = $("#tweet-text");//picks up values from texarea
+    const tweetText = $("#tweet-text");
     const counter = tweetText.val().length;
     if (counter === 0 || tweetText.val() === null) {//condition to check data entered or not
-
       $(".emptyTextError").text("Enter some valid data!!!").show();
       return
     }
-      
-  $.post("/tweets", { text: tweetText.val() }, function () { //assigns the value captured from texarea to text in database.
+   $.post("/tweets", { text: tweetText.val() }, function () { //assigns the value captured from texarea to text in database.
     tweetText.val(''); //to clear the textarea
     $("#allTweets").empty(); // empty's data and refreshes it with new one in next step
     $('#count').val("140"); // resets the counter to 140 
     loadTweets();//to load the tweets.
-    
   })
-})
+ })
 });
-
- 
-  
-  
-  
-//renderTweets(tweetDataBase);
-//renderTweets(data);
