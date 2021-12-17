@@ -16,3 +16,10 @@ This repository is the starter code for the project: It uses HTML, CSS, JS, jQue
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of Desktop View"](https://github.com/Arvind82chd/tweeterNew/blob/master/docs/Desktop-View.png?raw=true)
+!["Screenshot of Tablet View"](https://github.com/Arvind82chd/tweeterNew/blob/master/docs/Tablet-view.png?raw=true)
+!["Screenshot of Smartphone view"](https://github.com/Arvind82chd/tweeterNew/blob/master/docs/Smartphone-view.png?raw=true)
+!["Screenshot of Error Message"](https://github.com/Arvind82chd/tweeterNew/blob/master/docs/Error.png?raw=true)
