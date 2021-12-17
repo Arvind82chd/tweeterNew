@@ -8,7 +8,7 @@
     "start": "./node_modules/.bin/nodemon -L server/index.js",
     "local": "nodemon --watch server -e js server/index.js"
   },
-  "author": "Lighthouse Labs",
+  "author": "Arvind Sharma",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.1",
