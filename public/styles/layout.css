@@ -16,7 +16,9 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  /* background-color: #f4f1ec; */
+  /* background-color: aliceblue; */
+  background-color: #e6f1f7;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif, 'Bungee', cursive, sans-serif;
 }
@@ -27,7 +29,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  background-color: salmon;
+  /* background-color: salmon; */
   width: 100%;
   /* background-color: #e7a427;
     background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png"); */
@@ -48,7 +50,7 @@ body {
   /* margin: 5% 0% 5% 0%; */
   /* width: 90%;  */
   align-items: center;
-  margin-top: 0px; 
+  margin-top: 5%; 
 }
 
 #allTweets {
@@ -64,6 +66,7 @@ body {
   /* align-items: center; */
   justify-content: stretch;
   border: 2px black solid;
+  border-radius: .2em;
 }
 
 .topLine {
@@ -92,11 +95,16 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 1% 1% 1% 1%;
+  margin: 0% 1% .5em 1em;
   font-size: small;
 }
 
-.icons.fas {
+#icons {
+  margin-right: .5em;
+  padding-top: 1%;
+}
+
+#icons.fas {
   color: #4056A1;
 }
 
@@ -108,4 +116,78 @@ body {
 .limitExceedError {
   border: 2px solid red;
   color: red;
+}
+
+.emptyTextError {
+  border: 2px solid red;
+  color: red;
+}
+
+/* for smartphones */
+@media only screen and (max-width: 767px) {
+  .nav {
+    background-color: transparent;
+    background-image: url("https://www.transparenttextures.com/patterns/binding-light.png");
+    
+  }
+  
+  .container {
+    padding-top: 20px;
+  }
+
+}
+/* for tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .header1 {
+    width: 33%;
+    float: left;
+    height: 400px;
+    align-items: center;
+    margin: 200px 2% 0px 4%;
+    border-radius: .2em;
+  }  
+  main {
+    width: 67%;
+
+  }
+
+  .container {
+    padding-top: 200px;
+  }
+  
+  
+}
+
+/* for desktop */
+@media only screen and (min-width: 1024px) {
+
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header1 {
+    width: 33%;
+    float: left;
+    height: 400px;
+    align-items: center;
+    margin: 200px 2% 0px 4%;
+    /* margin-left: 15px; */
+    border-radius: .2em;
+  }  
+  main {
+    width: 67%;
+    
+  }
+
+  .container {
+    padding-top: 200px;
+  }
+  
 }

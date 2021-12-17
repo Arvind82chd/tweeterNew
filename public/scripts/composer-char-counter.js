@@ -14,6 +14,11 @@ $(document).ready(function () {
     counter.text(`${140 - count}`);//displays the counter at the count location in html 
   });
   
+  // $(".tweetForm").submit(function(event) {
+  //   event.preventDefault();
+  //   $.post('/', () => {
+  //     counter = 140;
+  //   })
   
     //Technique made quite clear by a mentor previously.
 
