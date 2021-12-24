@@ -88,6 +88,8 @@ body {
 .tweetsOutput {
   border-bottom: 2px black solid;
   justify-content: stretch;
+  /* to keep content inside the box below */
+  word-break: break-all; 
   width: 98%;
   margin: 1% 1% 0% 1%;
 }

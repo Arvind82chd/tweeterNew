@@ -65,6 +65,8 @@ $(document).ready(function() {
     if (counter === 0 || tweetText.val() === null) {
       $(".emptyTextError").text("Enter some valid data!!!").show();
       return;
+    } else if (counter > 140) {
+      return;
     }
     $.post("/tweets", { text: tweetText.val() }, function() {
     
