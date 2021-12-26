@@ -66,6 +66,7 @@ $(document).ready(function() {
       $(".emptyTextError").text("Enter some valid data!!!").show();
       return;
     } else if (counter > 140) {
+      $(".limitExceedError").text("You have extended your alphabet limit of 140!!!").show(); //displays error to user
       return;
     }
     $.post("/tweets", { text: tweetText.val() }, function() {
